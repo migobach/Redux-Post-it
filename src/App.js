@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 
 const App = () => (
-  <Fragment>
+  <Fragment className="center">
     <PostItForm />
     <PostItList />
     <Footer />

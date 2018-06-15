@@ -24,7 +24,8 @@ class PostItForm extends React.Component {
     const { title } = this.state
     return (
       <Fragment>
-        <h1>Add a Post-It Note</h1>
+        <h1>Post-it & Sub-Post-it</h1>
+        <h3>Submit a Note class below:</h3>
         <form onSubmit={this.handleSubmit}>
           <input
           value={title}

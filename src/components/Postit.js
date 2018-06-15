@@ -12,13 +12,15 @@ const styles = {
 
 const PostIt = ({ title, complete, dispatch }) => (
   <Fragment>
-    <li
-      onClick={() => dispatch(togglePostIt(title))}
-      style={ complete ? styles.complete : {}}
-      >
-    {title}
+    <li>
+      <hr />
+    <h4 style={ complete ? styles.complete : {}}>{title}</h4>
     {'  '}
     <button onClick={() => dispatch(deletePostIt(title))}>Delete</button>
+    <button
+      onClick={() => dispatch(togglePostIt(title))}>Complete</button>
+      <hr />
+
     </li>
   
   </Fragment>
