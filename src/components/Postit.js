@@ -18,7 +18,7 @@ const PostIt = ({ id, title, complete, dispatch }) => (
       >
     {title}
     </li>
-    <button onClick={() => dispatch(deletePostIt(id))}>Delete</button>
+    <button onClick={() => dispatch(deletePostIt(title))}>Delete</button>
   </Fragment>
 )
 

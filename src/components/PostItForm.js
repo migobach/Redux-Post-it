@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { addPostIt } from '../reducers/postit'
+import { incId } from '../reducers/nextid'
 
 class PostItForm extends React.Component {
   state = { title: '' }

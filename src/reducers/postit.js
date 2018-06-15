@@ -25,14 +25,14 @@ export default ( state = [], action ) => {
       return [action.postit, ...state]
     case EDIT_POSTIT:
       return [action.postit, ...state]
-    case DELETE_POSTIT:
-      return state.filter( p => p.id !== action.id)
-    case TOGGLE_POSTIT:
+      case TOGGLE_POSTIT:
       return state.map( postit => { 
         if (postit.id === action .id)
         return {...postit, complete: !postit.complete}
         return postit 
       }) 
+      case DELETE_POSTIT:
+        return state.filter( p => p.title !== action.id)
     default: 
       return state
   }
