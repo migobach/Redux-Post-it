@@ -6,19 +6,21 @@ import { deletePostIt } from '../reducers/postit';
 const styles = {
   complete: {
     textDecoration: 'line-through', 
-    color: 'green'
+    color: 'red'
   }
 }
 
-const PostIt = ({ id, title, complete, dispatch }) => (
+const PostIt = ({ title, complete, dispatch }) => (
   <Fragment>
     <li
-      onClick={() => dispatch(togglePostIt(id))}
+      onClick={() => dispatch(togglePostIt(title))}
       style={ complete ? styles.complete : {}}
       >
     {title}
-    </li>
+    {'  '}
     <button onClick={() => dispatch(deletePostIt(title))}>Delete</button>
+    </li>
+  
   </Fragment>
 )
 

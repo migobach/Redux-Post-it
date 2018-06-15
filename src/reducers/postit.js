@@ -11,8 +11,8 @@ export const deletePostIt = (id) => {
   return { type: DELETE_POSTIT, id }
 }
 
-export const togglePostIt = (id) => {
-  return { type: TOGGLE_POSTIT, id }
+export const togglePostIt = (title) => {
+  return { type: TOGGLE_POSTIT, title }
 }
 
 export const editPostIt = (id) => {
@@ -27,7 +27,7 @@ export default ( state = [], action ) => {
       return [action.postit, ...state]
       case TOGGLE_POSTIT:
       return state.map( postit => { 
-        if (postit.id === action .id)
+        if (postit.title === action.title)
         return {...postit, complete: !postit.complete}
         return postit 
       }) 

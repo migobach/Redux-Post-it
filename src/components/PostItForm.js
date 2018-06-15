@@ -11,7 +11,6 @@ class PostItForm extends React.Component {
     const { title } = this.state
     const { dispatch, id } = this.props
     const postit = { title, id, complete: false }
-    debugger
     dispatch(addPostIt(postit))
     this.setState({ title: '' })
   }

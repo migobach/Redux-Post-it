@@ -1,9 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { setFilter } from '../reducers/filter'
 
-const FilterLinks = () => {
-  return (
-    <div>
-    </div>
-  )
+const FilterLinks = ({ children, filter, dispatch }) => {
+ if (children === filter) {
+   return <span>{children}</span> 
+ } else {
+   return (
+     <a 
+     href={`#${children}`}
+     onClick={ () => dispatch(setFilter(children)) }
+     >
+     {children}
+     </a>
+   )
+ }
 }
-export default FilterLinks
+
+const mapStateToProps = (state) => {
+  return { filter: state.filter }
+}
+
+
+export default connect(mapStateToProps)(FilterLinks)
